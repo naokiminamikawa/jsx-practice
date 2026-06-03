@@ -1,7 +1,15 @@
+import { users } from "../data/data.js";
+
 const Exercise1 = () => {
   return (
     <ul>
-      <li>ここに適切なリストを表示してください</li>
+      {users.map((user) =>
+        user.age >= 18 ? (
+          <li key={user.id}>{user.name}(成人)</li>
+        ) : (
+          <li key={user.id}>{user.name}</li>
+        ),
+      )}
     </ul>
   );
 };
