@@ -3,13 +3,12 @@ import { users } from "../data/data.js";
 const Exercise1 = () => {
   return (
     <ul>
-      {users.map((user) =>
-        user.age >= 18 ? (
-          <li key={user.id}>{user.name}(成人)</li>
-        ) : (
-          <li key={user.id}>{user.name}</li>
-        ),
-      )}
+      {users.map((user) => (
+        <li key={user.id}>
+          {user.name}
+          {user.age >= 18 && "（成人）"}
+        </li>
+      ))}
     </ul>
   );
 };

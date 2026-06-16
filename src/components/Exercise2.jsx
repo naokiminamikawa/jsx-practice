@@ -5,13 +5,12 @@ const Exercise2 = () => {
     <ul>
       {devices
         .filter((device) => device.width >= 700)
-        .map((device) =>
-          device.price >= 1000 ? (
-            <li key={device.id}>{device.name}💰 高級品</li>
-          ) : (
-            <li key={device.id}>{device.name}🛒 お買い得</li>
-          ),
-        )}
+        .map((device) => (
+          <li key={device.id}>
+            {device.name}
+            {device.price >= 1000 ? " 💰 高級品" : " 🛒 お買い得"}
+          </li>
+        ))}
     </ul>
   );
 };
